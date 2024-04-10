@@ -1,7 +1,9 @@
 package org.bank;
 
 public class Main {
+
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        org.bank.BankManager bankManager = new org.bank.BankManager();
+        bankManager.run();
     }
 }
