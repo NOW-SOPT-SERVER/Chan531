@@ -40,7 +40,7 @@ public class MemberService {
     @Transactional
     public void deleteMember(Long memberId) {
         val member = findMember(memberId);
-        deleteMember(member);
+        memberRepository.delete(member);
     }
 
     public MemberListResponse getMembers() {
@@ -61,10 +61,6 @@ public class MemberService {
     private Member findMember(Long memberId) {
         return memberRepository.findById(memberId)
                 .orElseThrow(() -> new MemberException(INVALID_MEMBER));
-    }
-
-    private void deleteMember(Member member) {
-        memberRepository.delete(member);
     }
 
     private List<Member> getMemberList() {
