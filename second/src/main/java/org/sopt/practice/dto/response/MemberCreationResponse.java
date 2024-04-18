@@ -14,5 +14,4 @@ public record MemberCreationResponse(
                 .id(member.getId())
                 .build();
     }
-
 }
