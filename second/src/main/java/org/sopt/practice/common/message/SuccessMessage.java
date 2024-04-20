@@ -1,4 +1,4 @@
-package org.sopt.practice.message;
+package org.sopt.practice.common.message;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +11,8 @@ public enum SuccessMessage {
     SUCCESS_GET_MEMBER("멤버 조회 성공"),
     SUCCESS_DELETE_MEMBER("멤버 삭제 성공"),
     SUCCESS_GET_MEMBER_LIST("멤버 리스트 조회 성공"),
+    SUCCESS_CREATE_BLOG("블로그 생성 성공"),
+    SUCCESS_UPDATE_TITLE("블로그 제목 수정 성공"),
     ;
 
     private final String message;

@@ -12,7 +12,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 
 import static org.sopt.practice.common.dto.Response.*;
-import static org.sopt.practice.message.SuccessMessage.*;
+import static org.sopt.practice.common.message.SuccessMessage.*;
 
 @RestController
 @RequiredArgsConstructor

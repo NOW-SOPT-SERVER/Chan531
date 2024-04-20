@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-import static org.sopt.practice.message.ErrorMessage.INVALID_MEMBER;
+import static org.sopt.practice.common.message.ErrorMessage.INVALID_MEMBER;
 
 @Service
 @RequiredArgsConstructor

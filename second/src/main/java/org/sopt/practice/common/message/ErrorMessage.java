@@ -1,9 +1,10 @@
-package org.sopt.practice.message;
+package org.sopt.practice.common.message;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
+import static org.springframework.http.HttpStatus.CONFLICT;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 @Getter
@@ -12,6 +13,12 @@ public enum ErrorMessage {
 
     /* 404 NOT_FOUND : 자원을 찾을 수 없음 */
     INVALID_MEMBER(NOT_FOUND, "유효하지 않은 회원입니다."),
+    INVALID_BLOG(NOT_FOUND, "유효하지 않은 블로그입니다."),
+
+
+    /* 409 CONFLICT : 중복된 자원 */
+    EXIST_MEMBER(CONFLICT, "멤버가 이미 존재하는 게시물입니다."),
+    EXIST_BLOG(CONFLICT, "게시물이 이미 존재하는 멤버입니다."),
     ;
 
     private final HttpStatus httpStatus;

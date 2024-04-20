@@ -4,12 +4,12 @@ import lombok.Getter;
 import org.sopt.practice.common.message.ErrorMessage;
 
 @Getter
-public class MemberException extends RuntimeException {
+public class BlogException extends RuntimeException {
 
     private final ErrorMessage errorMessage;
 
-    public MemberException(ErrorMessage errorMessage) {
-        super("[MemberException] : " + errorMessage.getMessage());
+    public BlogException(ErrorMessage errorMessage) {
+        super("[BlogException] : " + errorMessage.getMessage());
         this.errorMessage = errorMessage;
     }
 }
