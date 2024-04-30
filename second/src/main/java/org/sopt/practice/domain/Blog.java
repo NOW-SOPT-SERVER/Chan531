@@ -4,11 +4,6 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.sopt.practice.exception.BlogException;
-
-import java.util.Objects;
-
-import static org.sopt.practice.common.message.ErrorMessage.*;
 
 @Entity
 @Getter
@@ -40,14 +35,6 @@ public class Blog extends BaseTimeEntity {
                 .description(description)
                 .member(member)
                 .build();
-    }
-
-    private Member setMember(Member member) {
-        if (Objects.nonNull(this.member)) {
-            throw new BlogException(EXIST_MEMBER);
-        }
-        member.initBlog(this);
-        return member;
     }
 
     public void updateTitle(String title) {

@@ -6,7 +6,6 @@ import org.sopt.practice.domain.Blog;
 import org.sopt.practice.domain.Member;
 import org.sopt.practice.dto.request.BlogCreationRequest;
 import org.sopt.practice.dto.request.BlogTitleUpdateRequest;
-import org.sopt.practice.dto.response.BlogCreationResponse;
 import org.sopt.practice.exception.BlogException;
 import org.sopt.practice.exception.MemberException;
 import org.sopt.practice.repository.BlogRepository;
@@ -30,7 +29,8 @@ public class BlogService {
         val member = findMember(memberId);
         val blog = generateBlog(request, member);
         saveBlog(blog);
-        return blog.getId().toString();
+        val response = blog.getId().toString();
+        return response;
     }
 
     @Transactional

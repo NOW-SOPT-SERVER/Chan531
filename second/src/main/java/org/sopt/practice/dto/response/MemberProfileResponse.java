@@ -1,12 +1,13 @@
 package org.sopt.practice.dto.response;
 
-import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.NonNull;
 import org.sopt.practice.domain.Member;
 import org.sopt.practice.domain.Part;
 
-@Builder(access = AccessLevel.PRIVATE)
+import static lombok.AccessLevel.PRIVATE;
+
+@Builder(access = PRIVATE)
 public record MemberProfileResponse(
         long id,
         @NonNull String name,
