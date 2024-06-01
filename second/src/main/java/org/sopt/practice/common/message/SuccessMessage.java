@@ -17,6 +17,8 @@ public enum SuccessMessage {
 
     SUCCESS_CREATE_POSTING("게시글 생성 성공"),
     SUCCESS_GET_POSTING("게시글 조회 성공"),
+
+    SUCCESS_REISSUE_TOKEN("토큰 재발급 성공"),
     ;
 
     private final String message;
