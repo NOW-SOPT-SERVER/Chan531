@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.sopt.practice.common.dto.SuccessResponse;
+import org.sopt.practice.common.handler.PrincipalHandler;
 import org.sopt.practice.dto.request.BlogCreationRequest;
 import org.sopt.practice.dto.request.BlogTitleUpdateRequest;
 import org.sopt.practice.service.BlogService;
@@ -23,9 +24,11 @@ import static org.sopt.practice.common.message.SuccessMessage.SUCCESS_UPDATE_TIT
 public class BlogController {
 
     private final BlogService blogService;
+    private final PrincipalHandler principalHandler;
 
     @PostMapping
-    public ResponseEntity<SuccessResponse> createBlog(@RequestHeader Long memberId, @Valid @RequestBody BlogCreationRequest request) {
+    public ResponseEntity<SuccessResponse> createBlog(@Valid @RequestBody BlogCreationRequest request) {
+        val memberId = principalHandler.getMemberIdFromPrincipal();
         val response = blogService.createBlog(memberId, request);
         return ResponseEntity.created(getURI())
                 .header("Blog-Id", response)

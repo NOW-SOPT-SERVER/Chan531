@@ -26,6 +26,7 @@ public class MemberController {
     public ResponseEntity<SuccessResponse> createMember(@Valid @RequestBody MemberCreationRequest request) {
         val response = memberService.createMember(request);
         return ResponseEntity.created(getURI())
+                .header("Location", response.userId())
                 .body(of(SUCCESS_CREATE_MEMBER.getMessage(), response));
     }
 

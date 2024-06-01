@@ -13,6 +13,9 @@ public enum ErrorMessage {
     /* 400 BAD_REQUEST : 잘못된 요청 */
     NOT_MATCH_BLOG_POSTING(BAD_REQUEST, "블로그의 게시글이 아닙니다."),
 
+    /* 401 UNAUTHORIZED : 인증되지 않음 */
+    JWT_UNAUTHORIZED_EXCEPTION(UNAUTHORIZED, "사용자의 로그인 검증을 실패했습니다."),
+
     /* 403 FORBIDDEN : 권한 없음 */
     NOT_MATCH_MEMBER_BLOG(FORBIDDEN, "멤버의 블로그가 아닙니다."),
 
